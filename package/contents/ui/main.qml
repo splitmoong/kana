@@ -9,10 +9,10 @@ import org.kde.plasma.extras as PlasmaExtras
 PlasmoidItem {
     id: widget
     
-    //Visibility
+    // Visibility
     Plasmoid.status: PlasmaCore.Types.ActiveStatus
-
-    //Taskbar Representation
+    
+    // Taskbar Representation
     compactRepresentation: Item {
         Kirigami.Icon {
             anchors.fill: parent
@@ -26,9 +26,8 @@ PlasmoidItem {
         }
     }
 
-    //Full Panel
+    // Full Panel
     fullRepresentation: Item {
-        // Standard Panel Dimensions
         Layout.preferredWidth: Kirigami.Units.gridUnit * 18
         Layout.preferredHeight: Kirigami.Units.gridUnit * 22
         Layout.minimumWidth: Layout.preferredWidth
@@ -38,68 +37,34 @@ PlasmoidItem {
             anchors.fill: parent
             spacing: 0
 
-            //Header
-            RowLayout {
-                Layout.fillWidth: true
-                Layout.topMargin: Kirigami.Units.smallSpacing
-                Layout.leftMargin: Kirigami.Units.largeSpacing
-                Layout.rightMargin: Kirigami.Units.smallSpacing
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
-                spacing: Kirigami.Units.smallSpacing
+            // Toolbar
+            Toolbar {}
 
-                // Title
-                PlasmaExtras.Heading {
-                    level: 2
-                    text: "Kana"
-                    Layout.fillWidth: true
-                    elide: Text.ElideRight
-                }
-
-                // Configure Button (Standard "Flat" look)
-                PlasmaComponents3.ToolButton {
-                    icon.name: "configure"
-                    display: PlasmaComponents3.AbstractButton.IconOnly
-                    text: i18n("Configure")
-                    
-                    //Todo-Congig File
-                    onClicked: plasmoid.action("configure").trigger()
-                }
-
-                // Pin Button (The feature you liked)
-                PlasmaComponents3.ToolButton {
-                    id: pinButton
-                    checkable: true
-                    checked: !plasmoid.hideOnWindowDeactivate
-                    
-                    //swap icon between pinned and unpinned
-                    icon.name: checked ? "window-pin-decorated" : "window-pin"
-                    display: PlasmaComponents3.AbstractButton.IconOnly
-                    text: i18n("Keep Open")
-
-                    onToggled: {
-                        plasmoid.hideOnWindowDeactivate = !checked
-                    }
-                }
-            }
-
-            //Seperator Line
+            // Separator Line
             Kirigami.Separator {
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
             }
 
-            //Main Content
+            // Search Box
+            ColumnLayout {
+                Layout.fillWidth: true
+                // Add padding around the search bar so it doesn't touch the edges
+                Layout.margins: Kirigami.Units.largeSpacing 
+                
+                Kirigami.SearchField {
+                    id: searchField
+                    Layout.fillWidth: true
+                    placeholderText: i18n("Search...")
+                    onAccepted: console.log("Searching for:", text)
+                }
+            }
+
+            // Main Content
             ColumnLayout {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.margins: Kirigami.Units.largeSpacing
-
-                PlasmaComponents3.Label {
-                    text: "日本語の事象"
-                    font.pointSize: 16
-                    opacity: 0.7
-                    Layout.alignment: Qt.AlignHCenter
-                }
                 
                 Item { Layout.fillHeight: true }
             }
