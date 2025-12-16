@@ -1,0 +1,20 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "akshaysahasrabuddhey@gmail.com",
+                "Name": "Akshay Sahasrabuddhey"
+            }
+        ],
+        "Category": "Language",
+        "Description": "A japanese dictionary",
+        "Icon": "applications-education-language-symbolic",
+        "Id": "com.github.splitmoong.kana",
+        "Name": "Kana",
+        "Version": "1",
+        "Website": "https://example.com/user/plasmoid-helloworldplugin",
+        "BugReportUrl": "https://example.com/user/plasmoid-helloworldplugin/bugs"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "KPackageStructure": "Plasma/Applet"
+}
