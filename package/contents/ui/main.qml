@@ -38,7 +38,9 @@ PlasmoidItem {
             spacing: 0
 
             // Toolbar
-            Toolbar {}
+            Toolbar {
+                id: toolbar
+            }
 
             // Separator Line
             Kirigami.Separator {
@@ -46,27 +48,17 @@ PlasmoidItem {
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
             }
 
-            // Search Box
-            ColumnLayout {
-                Layout.fillWidth: true
-                // Add padding around the search bar so it doesn't touch the edges
-                Layout.margins: Kirigami.Units.largeSpacing 
-                
-                Kirigami.SearchField {
-                    id: searchField
-                    Layout.fillWidth: true
-                    placeholderText: i18n("Search...")
-                    onAccepted: console.log("Searching for:", text)
-                }
-            }
+            //Switch between two views.
+            StackLayout {
 
-            // Main Content
-            ColumnLayout {
+                id: viewStack
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.margins: Kirigami.Units.largeSpacing
-                
-                Item { Layout.fillHeight: true }
+
+                currentIndex: toolbar.isChartMode ? 1 : 0
+                Dictionary {}
+                Chart {}
             }
         }
     }
