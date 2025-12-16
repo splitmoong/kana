@@ -28,7 +28,7 @@ RowLayout {
     PlasmaComponents3.ToolButton {
         id: chartButton
         checkable: true
-        icon.source: Qt.resolvedUrl("../icons/chart-icon.svg")
+        icon.source: Qt.resolvedUrl("../icons/chart-icon-light.svg")
         text: i18n("Kana Chart")
         display: PlasmaComponents3.AbstractButton.IconOnly
     }
