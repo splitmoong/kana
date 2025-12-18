@@ -17,7 +17,7 @@ PlasmoidItem {
         Kirigami.Icon {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.smallSpacing
-            source: "applications-education-language-symbolic"
+            source: Qt.resolvedUrl("../icons/kana.png")
         }
 
         MouseArea {
@@ -28,8 +28,8 @@ PlasmoidItem {
 
     // Full Panel
     fullRepresentation: Item {
-        Layout.preferredWidth: Kirigami.Units.gridUnit * 18
-        Layout.preferredHeight: Kirigami.Units.gridUnit * 22
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 22
+        Layout.preferredHeight: Kirigami.Units.gridUnit * 24
         Layout.minimumWidth: Layout.preferredWidth
         Layout.minimumHeight: Layout.preferredHeight
 
@@ -56,9 +56,10 @@ PlasmoidItem {
                 Layout.fillHeight: true
                 Layout.margins: Kirigami.Units.largeSpacing
 
-                currentIndex: toolbar.isChartMode ? 1 : 0
+                currentIndex: toolbar.currentIndex
                 Dictionary {}
                 Chart {}
+                
             }
         }
     }

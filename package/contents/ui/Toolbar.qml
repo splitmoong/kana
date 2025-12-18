@@ -4,8 +4,7 @@ import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
 
-RowLayout {
-
+ColumnLayout {
     Layout.fillWidth: true
     Layout.topMargin: Kirigami.Units.smallSpacing
     Layout.leftMargin: Kirigami.Units.largeSpacing
@@ -13,23 +12,31 @@ RowLayout {
     Layout.bottomMargin: Kirigami.Units.smallSpacing
     spacing: Kirigami.Units.smallSpacing
 
-    property alias isChartMode: chartButton.checked
+    property alias currentIndex: tabBar.currentIndex
 
-
-    // Title
-    PlasmaExtras.Heading {
-        level: 2
-        text: "Kana"
+    // Title Row
+    RowLayout {
         Layout.fillWidth: true
-        elide: Text.ElideRight
+        PlasmaExtras.Heading {
+            level: 2
+            text: "Kana"
+            Layout.fillWidth: true
+            elide: Text.ElideRight
+        }
     }
 
-    // Toggle Button (Chart vs Dict)
-    PlasmaComponents3.ToolButton {
-        id: chartButton
-        checkable: true
-        icon.source: Qt.resolvedUrl("../icons/chart-icon-light.svg")
-        text: i18n("Kana Chart")
-        display: PlasmaComponents3.AbstractButton.IconOnly
+    // Tabs
+    PlasmaComponents3.TabBar {
+        id: tabBar
+        Layout.fillWidth: true
+        
+        PlasmaComponents3.TabButton {
+            text: i18n("Dictionary")
+        }
+        
+        PlasmaComponents3.TabButton {
+            text: i18n("Kana Chart")
+        }
+
     }
 }
