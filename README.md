@@ -1,12 +1,17 @@
-# Kana
-Kana is a system tray widget designed for Japanese learners. It provides **Dictionary Search** and a **Kana Chart**, built with native KDE components to look and feel like a part of your desktop.
+<h1 align="center">
+<img src="package/contents/icons/kana.png" width="128" height="128" />
+<br/>
+Kana
+</h1>
 
-<img width="1018" height="521" alt="Group 2" src="https://github.com/user-attachments/assets/84d84c19-b7b2-4780-ad88-dba87bfb9928" />
+<p align="center">A KDE system tray widget designed for Japanese learners.</p>
+
+<img width="991" height="545" alt="Group 1" src="screenshots/combined.png" />
 
 ## Features
 
 * **Dictionary Search** Search words using Hiragana / Katanaka / Kanji / Romaji. Uses the unofficial jisho.org API.
-* * **Kana Chart:** A table for Hiragana and Katakana with Romaji.
+* **Kana Chart:** A table for Hiragana and Katakana with Romaji.
 
 ## Prerequisites
 * **KDE Plasma 6**
