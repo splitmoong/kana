@@ -1,19 +1,27 @@
 # Kana
-Kana is a system tray widget designed for Japanese learners. It provides a **Hiragana/Katakana reference chart** and a **Dictionary Search**  (coming soon 😅), built with native KDE components to look and feel like part of your desktop.
+Kana is a system tray widget designed for Japanese learners. It provides **Dictionary Search** and a **Kana Chart**, built with native KDE components to look and feel like a part of your desktop.
 
-<img width="1028" height="527" alt="Group 2" src="https://github.com/user-attachments/assets/efb29cbe-0f2f-43e1-8f28-5a8515913867" />
+<img width="1018" height="521" alt="Group 2" src="https://github.com/user-attachments/assets/84d84c19-b7b2-4780-ad88-dba87bfb9928" />
 
 ## Features
 
-* **Kana Chart:** A table for Hiragana and Katakana with Romaji.
-* **Dictionary Search (coming soon 🤞)**
+* **Dictionary Search** Search words using Hiragana / Katanaka / Kanji / Romaji. Uses the unofficial jisho.org API.
+* * **Kana Chart:** A table for Hiragana and Katakana with Romaji.
 
 ## Prerequisites
 * **KDE Plasma 6**
 * **Qt 6** / **Kirigami**
-* **Command Line Tools:** `kpackagetool6` (or `kpackagetool5` for older systems)
-
+  
 ## Installation
-Navigate to the downloaded folder and run the following command to install the widget to your local user directory:
+
+### Option 1: Plasmoid file
+* Download the .plasmoid file.
+* Right-click on your desktop and select "Enter Edit Mode".
+* Click "Add or Manage Widgets..." then "Get New..." and finally "Install Widget From Local File..."
+* Select the downloaded .plasmoid file.
+
+### Option 2: Command Line
+Navigate to the downloaded folder (repo) and run the following command to install the widget to your local user directory:
 ```bash
 kpackagetool6 -i package --type Plasma/Applet
+
