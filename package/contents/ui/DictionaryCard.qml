@@ -11,22 +11,30 @@ Kirigami.AbstractCard {
     property string meanings: ""
     
     contentItem: Item {
-        implicitHeight: contentLayout.implicitHeight
+        implicitHeight: contentLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
         
         ColumnLayout {
             id: contentLayout
             anchors.fill: parent
-            anchors.margins: Kirigami.Units.smallSpacing
+            anchors.margins: Kirigami.Units.largeSpacing
             
             RowLayout {
-                PlasmaComponents3.Label {
+                PlasmaComponents3.TextArea {
                     text: root.kanji
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
-                    font.bold: true
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
+                    font.weight: Font.Normal
+                    readOnly: true
+                    selectByMouse: true
+                    background: null
+                    padding: 0
                 }
-                PlasmaComponents3.Label {
+                PlasmaComponents3.TextArea {
                     text: root.reading
                     opacity: 0.7
+                    readOnly: true
+                    selectByMouse: true
+                    background: null
+                    padding: 0
                 }
             }
             
@@ -34,10 +42,14 @@ Kirigami.AbstractCard {
                 Layout.fillWidth: true
             }
             
-            PlasmaComponents3.Label {
+            PlasmaComponents3.TextArea {
                 text: root.meanings
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
+                readOnly: true
+                selectByMouse: true
+                background: null
+                padding: 0
             }
         }
     }
